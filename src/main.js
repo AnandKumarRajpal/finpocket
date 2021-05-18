@@ -1,8 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
+import vuetify from './plugins/vuetify'
+import store from './store'
+import VueAnalytics from 'vue-analytics';
+
+Vue.use(VueAnalytics, {
+  id: 'UA-xxxxxxxxx-x'
+});
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  vuetify,
+  store,
+  render: h => h(App)
 }).$mount('#app')
